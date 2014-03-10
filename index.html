@@ -1,13 +1,51 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Home
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div id="homepage">
+
+  <div id="home-header">
+
+    <h1>&middot; Hi! I'm Sandeep &middot;</h1>
+
+    <p>
+      I am an Internet enthusiast and love to  brainstorm ideas, write code and build internet products.
+    </p>
+    <p>Currently I live in San Francisco bay area and am working on my startup 
+      <a href="http://distill.io">Distill</a>, -- <a href="http://distill.io">more details</a>
+    </p>
+    <p>
+      Previously, I co-founded <a href="http://vhelp.me">Vimagino</a> and worked at <a href="http://www.yahoo.com">Yahoo!</a>
+    </p>
+
+  </div>
+
+  <hr />
+
+  <div id="posts">
+
+    <!--
+        {% for post in site.posts offset: 0 limit: 10 %}
+            <div class="post-item">
+            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+                <small style="color: #999;">{{ post.date | date: "%m/%d/%Y" }}</small> 
+            </time>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <br />
+            {% if post.summary %}
+                <small>{{ post.summary }}</small>
+            {% endif %}
+            </div>
+        {% endfor %}
+
+    <div class="archive-link">
+    <small>
+        <a href="/archive.html" title="an archive of all posts">&larr; More posts</a>
+    </small>
+    </div>
+
+        -->
+  </div>
+
 </div>

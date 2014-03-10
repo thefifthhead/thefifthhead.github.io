@@ -1,44 +1,99 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<html lang="en"> <!-- Set this to the main language of your site -->
+<head>
+	<!-- Define the page charset to be utf-8 -->
+	<meta charset="utf-8" />
+	
+    <title>{{ page.title }} &middot; theFifthHead</title>
+	
+	<!-- Enter a brief description of your page -->
+	<meta name="description" content="">
+	
+	<!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <!-- Atom Feed -->
+    <link href="/feed.xml" rel="alternate" title="theFifthHead's Blog Post Feed" type="application/atom+xml">
+	
+	<!-- Add normalize.css which enables browsers to render all elements more consistently and in line with modern standards as it only targets particular styles that need normalizing -->
+	<link href="/assets/css/normalize.css" rel="stylesheet" media="all" />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <!-- Add bootstrap which makes everything better -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="all" />
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" media="all" />
+    <!--
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
 
-    </head>
-    <body>
+    <!-- Include the site stylesheet -->
+    <link href="/assets/css/main.css" rel="stylesheet" media="all" />
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+    <!-- Google Font - Gilda Display -->
+    <link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
 
-          {{ content }}
+</head>
+<body>
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
-          </div>
-        </div>
+    <div class="container">
 
-    </body>
+	<!-- The page header typically contains items such as your site heading, logo and possibly the main site navigation -->
+	<!-- ARIA: the landmark role "banner" is set as it is the prime heading or internal title of the page --> 
+	<header role="banner" class="subhead">
+	
+		<!-- ARIA: the landmark role "navigation" is added here as the element contains site navigation -->
+		<div class="subnav">
+			<!-- This can contain your site navigation either in an unordered list or even a paragraph that contains links that allow users to navigate your site -->
+            <ul class="nav nav-pills pull-right">
+                <li><a href="/about.html">about</a></li>
+                <li><a href="http://blog.thefifthhead.com/">blog</a></li>
+                <!-- li><a title="code" href="http://github.com/theFifthHead">
+                    <i class="fa fa-github"></i>
+                </a></li -->
+                <li><a title="tweets" href="https://twitter.com/theFifthHead">
+                    <i class="fa fa-twitter"></i>
+                </a></li>
+            </ul>
+            
+            <h1><a href="/">theFifthHead</a></h1>
+		
+		</div>
+
+	</header>
+	
+	<!-- If you want to use an element as a wrapper, i.e. for styling only, then <div> is still the element to use -->
+	<div class="wrap content shadow">
+	
+        {{ content }}
+		
+	</div>
+	
+	<!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+	<!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
+	<footer role="contentinfo">
+
+        <small class="pull-right">Lovingly concocted by <a href="http://jekyllrb.com/">Jekyll</a></small>
+
+		<!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2012' is a date -->
+            <small>&copy; <time datetime="2013">2013</time> - <time datetime="2014">2014</time> <a href="http://thefifthhead.com">theFifthHead
+                </a> &middot; <a href="mailto:mail@thefifthhead.com">email</a> &middot; <a href="http://twitter.com/theFifthHead">@theFifthHead</a></small><br />
+
+	</footer>
+
+    </div>
+	
+	<!-- Google Analytics - change the UA-XXXX-XX string to your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-1346746-6', 'thefifthhead.com');
+      ga('send', 'pageview');
+
+    </script>	
+
+</body>
 </html>
